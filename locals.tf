@@ -2,7 +2,7 @@ locals {
   tags = {
     Department   = "DevOps"
     Organization = "Infrastructure and Operations"
-    Project      = "devops-lab-eks"
+    Project      = var.project_name
     Environment  = "Development"
   }
 }
