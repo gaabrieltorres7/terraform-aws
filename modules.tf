@@ -21,3 +21,12 @@ module "eks_managed_node_group" {
   private_subnet_1b = module.eks_network.subnet_private_1b
   tags              = local.tags
 }
+
+module "lb_controller" {
+  source           = "./modules/lb-controller"
+  project_name     = var.project_name
+  oidc_issuer_url  = module.eks_cluster.oidc
+  eks_cluster_name = module.eks_cluster.eks_cluster_name
+  vpc_id           = module.eks_network.vpc_id
+  tags             = local.tags
+}
