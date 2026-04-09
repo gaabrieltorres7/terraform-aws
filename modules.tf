@@ -2,7 +2,7 @@ module "eks_network" {
   source       = "./modules/network"
   project_name = var.project_name
   cidr_block   = var.cidr_block
-  tags         = local.tags
+  tags         = var.tags
 }
 
 module "eks_cluster" {
@@ -10,7 +10,7 @@ module "eks_cluster" {
   project_name     = var.project_name
   public_subnet_1a = module.eks_network.subnet_public_1a
   public_subnet_1b = module.eks_network.subnet_public_1b
-  tags             = local.tags
+  tags             = var.tags
 }
 
 module "eks_managed_node_group" {
@@ -19,7 +19,7 @@ module "eks_managed_node_group" {
   cluster_name      = module.eks_cluster.eks_cluster_name
   private_subnet_1a = module.eks_network.subnet_private_1a
   private_subnet_1b = module.eks_network.subnet_private_1b
-  tags              = local.tags
+  tags              = var.tags
 }
 
 module "lb_controller" {
@@ -28,5 +28,5 @@ module "lb_controller" {
   oidc_issuer_url  = module.eks_cluster.oidc
   eks_cluster_name = module.eks_cluster.eks_cluster_name
   vpc_id           = module.eks_network.vpc_id
-  tags             = local.tags
+  tags             = var.tags
 }
