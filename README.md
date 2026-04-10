@@ -9,7 +9,9 @@
 
 ## Providers
 
-No providers.
+| Name | Version |
+| ---- | ------- |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.38.0 |
 
 ## Modules
 
@@ -22,7 +24,9 @@ No providers.
 
 ## Resources
 
-No resources.
+| Name | Type |
+| ---- | ---- |
+| [aws_ecr_repository.devops_lab_ecr](https://registry.terraform.io/providers/hashicorp/aws/6.38.0/docs/resources/ecr_repository) | resource |
 
 ## Inputs
 
@@ -35,5 +39,9 @@ No resources.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+| ---- | ----------- |
+| <a name="output_certificate_authority"></a> [certificate\_authority](#output\_certificate\_authority) | n/a |
+| <a name="output_eks_cluster_name"></a> [eks\_cluster\_name](#output\_eks\_cluster\_name) | n/a |
+| <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | n/a |
 <!-- END_TF_DOCS -->
