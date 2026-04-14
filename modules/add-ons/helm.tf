@@ -24,3 +24,17 @@ resource "helm_release" "eks_helm_controller" {
     value = var.vpc_id
   }
 }
+
+resource "helm_release" "sealed_secrets" {
+  name       = "sealed-secrets"
+  repository = "https://bitnami-labs.github.io/sealed-secrets"
+  chart      = "sealed-secrets"
+  version    = "2.18.5"
+  namespace  = "kube-system"
+
+  set {
+    name  = "fullnameOverride"
+    value = "sealed-secrets-controller"
+  }
+}
+

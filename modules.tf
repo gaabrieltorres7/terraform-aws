@@ -22,8 +22,8 @@ module "eks_managed_node_group" {
   tags              = var.tags
 }
 
-module "lb_controller" {
-  source           = "./modules/lb-controller"
+module "eks_add_ons" {
+  source           = "./modules/add-ons"
   project_name     = var.project_name
   oidc_issuer_url  = module.eks_cluster.oidc
   eks_cluster_name = module.eks_cluster.eks_cluster_name
