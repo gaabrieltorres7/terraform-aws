@@ -9,24 +9,21 @@
 
 ## Providers
 
-| Name | Version |
-| ---- | ------- |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.38.0 |
+No providers.
 
 ## Modules
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
+| <a name="module_eks_add_ons"></a> [eks\_add\_ons](#module\_eks\_add\_ons) | ./modules/add-ons | n/a |
 | <a name="module_eks_cluster"></a> [eks\_cluster](#module\_eks\_cluster) | ./modules/cluster | n/a |
+| <a name="module_eks_ec2"></a> [eks\_ec2](#module\_eks\_ec2) | ./modules/ec2 | n/a |
 | <a name="module_eks_managed_node_group"></a> [eks\_managed\_node\_group](#module\_eks\_managed\_node\_group) | ./modules/managed-node-group | n/a |
 | <a name="module_eks_network"></a> [eks\_network](#module\_eks\_network) | ./modules/network | n/a |
-| <a name="module_lb_controller"></a> [lb\_controller](#module\_lb\_controller) | ./modules/lb-controller | n/a |
 
 ## Resources
 
-| Name | Type |
-| ---- | ---- |
-| [aws_ecr_repository.devops_lab_ecr](https://registry.terraform.io/providers/hashicorp/aws/6.38.0/docs/resources/ecr_repository) | resource |
+No resources.
 
 ## Inputs
 
