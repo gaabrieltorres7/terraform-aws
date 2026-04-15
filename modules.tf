@@ -30,3 +30,13 @@ module "eks_add_ons" {
   vpc_id           = module.eks_network.vpc_id
   tags             = var.tags
 }
+
+module "eks_ec2" {
+  source            = "./modules/ec2/"
+  project_name      = var.project_name
+  vpc_id            = module.eks_network.vpc_id
+  public_subnet     = module.eks_network.subnet_public_1a
+  private_subnet    = module.eks_network.subnet_private_1a
+  eks_cluster_sg_id = module.eks_cluster.sg_id
+  tags              = var.tags
+}

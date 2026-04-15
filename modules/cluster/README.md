@@ -43,4 +43,5 @@ No modules.
 | <a name="output_eks_cluster_name"></a> [eks\_cluster\_name](#output\_eks\_cluster\_name) | The name of the EKS cluster |
 | <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | The endpoint for the EKS cluster |
 | <a name="output_oidc"></a> [oidc](#output\_oidc) | The OIDC issuer URL for the EKS cluster |
+| <a name="output_sg_id"></a> [sg\_id](#output\_sg\_id) | The security group ID for the EKS cluster |
 <!-- END_TF_DOCS -->

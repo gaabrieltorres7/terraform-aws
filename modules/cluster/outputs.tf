@@ -17,3 +17,8 @@ output "endpoint" {
   value       = aws_eks_cluster.eks_cluster.endpoint
   description = "The endpoint for the EKS cluster"
 }
+
+output "sg_id" {
+  value       = aws_eks_cluster.eks_cluster.vpc_config[0].cluster_security_group_id
+  description = "The security group ID for the EKS cluster"
+}
