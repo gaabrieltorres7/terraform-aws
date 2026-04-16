@@ -38,12 +38,6 @@ resource "aws_instance" "postgres" {
 
   vpc_security_group_ids = [aws_security_group.postgres_sg.id]
 
-  user_data = <<EOF
-#!/bin/bash
-apt-get update
-apt-get install ansible -y
-EOF
-
   tags = merge(var.tags, {
     Name = "${var.project_name}-postgres"
   })
