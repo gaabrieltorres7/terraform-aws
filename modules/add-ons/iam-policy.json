@@ -7,6 +7,7 @@
                 "iam:CreateServiceLinkedRole",
                 "ec2:DescribeAccountAttributes",
                 "ec2:DescribeAddresses",
+                "ec2:DescribeAvailabilityZones",
                 "ec2:DescribeInternetGateways",
                 "ec2:DescribeVpcs",
                 "ec2:DescribeSubnets",
@@ -19,6 +20,7 @@
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeLoadBalancerAttributes",
                 "elasticloadbalancing:DescribeListeners",
+                "elasticloadbalancing:DescribeListenerAttributes",
                 "elasticloadbalancing:DescribeListenerCertificates",
                 "elasticloadbalancing:DescribeSSLPolicies",
                 "elasticloadbalancing:DescribeRules",
@@ -26,6 +28,14 @@
                 "elasticloadbalancing:DescribeTargetGroupAttributes",
                 "elasticloadbalancing:DescribeTargetHealth",
                 "elasticloadbalancing:DescribeTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:AddTags",
+                "elasticloadbalancing:RemoveTags"
             ],
             "Resource": "*"
         },
@@ -132,24 +142,6 @@
                 "elasticloadbalancing:DeleteRule"
             ],
             "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "elasticloadbalancing:AddTags",
-                "elasticloadbalancing:RemoveTags"
-            ],
-            "Resource": [
-                "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*",
-                "arn:aws:elasticloadbalancing:*:*:loadbalancer/net/*/*",
-                "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*"
-            ],
-            "Condition": {
-                "Null": {
-                    "aws:RequestTag/elbv2.k8s.aws/cluster": "true",
-                    "aws:ResourceTag/elbv2.k8s.aws/cluster": "false"
-                }
-            }
         },
         {
             "Effect": "Allow",
